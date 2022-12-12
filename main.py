@@ -94,8 +94,13 @@ game_versions = set(userInput.split(";"))
 
 # paths
 
-availableDirs = next(os.walk(CONFIG["userPaths"]["minecraftInstancesPath"]))[1]
-
+try:
+    availableDirs = next(os.walk(CONFIG["userPaths"]["minecraftInstancesPath"]))[1]
+except StopIteration:
+    print("Wrong Minecraft instances path (check config.json)")
+    input("Press enter to exit")
+    sys.exit()
+    
 print()
 for i, elem in enumerate(availableDirs):
     print(f"{i+1}) {elem}\n")
@@ -135,6 +140,8 @@ if handleResponse(download_urls["responseCode"]):
     copyFilesFromOldInstance(oldPath, newPath)
     
     CONFIG["lastUsedDir"] = selectedNewDir
+    with open("config.json", "w") as f:
+        f.write(json.dumps(CONFIG))
         
 elif download_urls["responseCode"] == 404:
     print(f"Mod for project id {download_urls['data'][0]} not found")
