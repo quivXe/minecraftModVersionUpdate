@@ -1,0 +1,21 @@
+{
+    "apiKey": "apiKey",
+    "userPaths": {
+        "minecraftInstancesPath": "C:/Users/userName/AppData/Roaming/Minecraft/instances/"
+    },
+    "lastUsedDir": "u.fabric_1.19.1",
+    "toCopyFiles": ["options.txt"],
+    "toCopyDirs": ["config", "schematics"],
+    "modProjectsIds": {
+        "Litematica": "308892",
+        "Item Scroller": "242064",
+        "Fabric Api": "306612",
+        "Carpet Mod": "349239",
+        "Lithium": "360438",
+        "Logical Zoom": "356461",
+        "Malilib": "303119",
+        "MiniHUD": "244260",
+        "Tweakeroo": "297344"
+    },
+    "tempToCopyFiles": ["hotbar.nbt", "options.txt"]
+}
